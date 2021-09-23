@@ -1,0 +1,334 @@
+how to use git-hub
+
+git init // initialise local git repo
+
+git add<file> //add files to index
+
+git status // status of working tree
+
+git commit // commit changes in index 
+
+git push //push to remote repo 
+
+git pull  //pull latest from a remote repo
+
+
+Install  
+Linux : sudo apt-get install git
+
+
+
+/////After setting up git repo
+
+git config --global user.name ' my USERNAME'
+git config --global user.email ' my email'
+
+//////
+
+git status 
+
+///// to remove files from tracking
+
+git rm --cached name of file
+
+//////to add a specific file for track
+
+git add *.html   // all such file will be tracked
+
+////// to add all 
+
+git add .
+
+////// git commit 
+
+it will open a text editor and press i to insert
+and :wq to exit
+
+///// or direct git commit
+
+git commit  -m 'message'
+
+///// about git ignore
+
+
+a file which will help in excluding files from git add
+
+touch .gitignore
+
+for example  we have to ignore logs.txt file from track
+
+so just add the fileaname  and type inside gitignore
+if to exclude a folder 
+/directory name
+
+//////// 
+
+working on a project with a bunch of
+ 
+people and your assign the task of
+ 
+adding a login okay so you don't want to
+ 
+start making changes and you know push
+ 
+to the repository and have the main code
+
+
+ 
+based codebase edit edited and changed
+ 
+without finishing the praat are the
+ 
+functionality okay so what you would do
+ 
+is you could create a branch call
+ 
+login or whatever and then work in that
+ 
+branch and you can still commit it and
+ 
+all that but it's not going to be
+ 
+committed to the main branch okay which
+ 
+is called master you can see right here
+ 
+when we say get status it tells us we're
+ 
+on the master branch now to create a
+ 
+branch we can say get branch and let's
+ 
+just call this my branch I actually will
+
+/////
+//////// to create a new branch and work on it
+
+git branch nameofbranch
+
+//to move to the new branch
+
+git checkout nameofbranchtogoto
+
+//to get to master branch
+
+git checkout master
+
+
+////if we implmented something in new branch and set those in main 
+
+git merge branchname
+
+//it will redirect to a text editor and type the commit
+
+////now using remote repo
+
+git remote add origin https://github.com/KalidasVijaybhak/practicals
+
+git push -u origin master
+
+//they will ask for username and pass
+
+
+
+//////if you already linked a repo and to remove it 
+
+git remote remove origin
+
+
+////////if some error
+
+You can override any checks that git does by using "force push". Use this command in terminal
+
+git push -f origin master
+
+However, you will potentially ignore the existing work that is in remote - you are effectively rewriting the remote's history to be exactly like your local copy.
+
+//////////////////////
+
+
+////////////////////////If the GitHub repo has seen new commits pushed to it, while you were working locally, I would advise using:
+
+git pull --rebase
+git push
+The full syntax is:
+
+git pull --rebase origin main
+git push origin main
+
+
+///////////////////////////
+Delete Local Branch
+To delete the local branch use one of the following:
+
+$ git branch -d branch_name
+$ git branch -D branch_name
+
+/////////////////git-branch
+We can use the --show-current option of the git-branch command to print the current branch’s name.
+
+$ git branch –show-current
+
+////////////////////Do you want to merge a 'develop' branch into master?
+
+git checkout master
+git merge develop
+
+
+/////////////////////////////dot this before pushing to remote!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+git init
+
+git remote add origin https://gitlab.com/crew-chief-systems/bot
+
+git remote -v (for checking current repository)
+
+git add -A(add all files)
+
+git commit -m 'Added my project'
+
+git pull --rebase origin master
+
+git push  origin master
+
+
+/////////////////////////pushing to a cloned repo///////////////////////////////////////////////
+
+
+
+Create a branch
+Change to the repository directory on your computer (if you are not already there):
+
+cd first-contributions
+Now create a branch using the git checkout command:
+
+git checkout -b your-new-branch-name
+For example:
+
+git checkout -b add-alonzo-church
+(The name of the branch does not need to have the word add in it, but it's a reasonable thing to include because the purpose of this branch is to add your name to a list.)
+
+Make necessary changes and commit those changes
+Now open Contributors.md file in a text editor, add your name to it. Don't add it at the beginning or end of the file. Put it anywhere in between. Now, save the file.
+
+git status
+
+If you go to the project directory and execute the command git status, you'll see there are changes.
+
+Add those changes to the branch you just created using the git add command:
+
+git add Contributors.md
+Now commit those changes using the git commit command:
+
+git commit -m "Add <your-name> to Contributors list"
+replacing <your-name> with your name.
+
+Push changes to GitHub
+Push your changes using the command git push:
+
+git push origin <add-your-branch-name>
+//replacing <add-your-branch-name> with the name of the branch you created earlier.
+
+
+
+//////////////////////logss//////////////////////////////
+
+git log
+
+4///////////////////create  a new branch/////////////////////////////
+
+
+git branch branch_name
+
+/////////////////////to check current branch/////////////////////////////
+
+git branch
+
+
+////////////////////////switchng to other branches///////////////////////////
+
+git checkout branch_name 	
+
+////////////////////////process of merging///////////////////////////
+
+if u have created a new file in branch and would want to merge it with the main branch
+
+use steps:
+
+git add .
+
+git commit -m 'message'
+
+git diff master ////////////////////will show differnce between master brach and my new branch
+
+//go to master branch 
+
+giit merge branch_name
+
+/////////////////////////////////////////////////////////////////////////
+
+///////////////branch deletion/////////////////
+
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+
+////////////////////////////////////////////////////
+
+///////////////////how to push commit to remote with doing merge
+
+git push --set-upstream origin alpha
+
+//////////////////////
+
+
+
+///////////////////////////////////ERROR//////////////////////////////////////
+
+remote: Repository not found.
+fatal: repository 'https://github.com/username/repository.git/' not found
+
+
+in this case use 
+$ git credential-manager uninstall
+
+$ git credential-manager install
+
+if this did not work 
+copy paste this:
+git remote set-url origin https://username@github.com/MyRepo/project.git
+
+////////////////////////////////////////////////need to find diff between pull and fetch//////
+
+after that copy paset ur git repo
+git remote set-url originhttps://github.com/KalidasVijaybhak/freecodecamp_web_projects.git
+
+//////////////////////////////////////////////////////////////////////////////////////// 
+
+
+//////////////////difference between git fetch /// git pull
+
+
+
+
+////////////////////to know difference between branches /////////////////////////////////works only on merge branch’s
+To see differences between your local and remote projects use this:
+
+git diff <local branch> <remote>/<remote branch>
+
+
+
+///////////////////INFO///////////////////////////////
+From August 13, 2021, Github is no longer accepting account passwords when authenticating Git operations. You need to add PAT (Personal Access Token) instead, you can follow the below method to add PFA on your system
+
+Create Personal Access Token on Github
+From your Github account, go to Settings => Developer Settings => Personal Access Token => Generate New Token (Give your password) => Fillup the form => click Generate token => Copy the generated Token, it will be something like ghp_sFhFsSHhTzMDreGRLjmks4Tzuzgthdvfsrta
+
+Now follow below method based on your machine:
+
+For Windows OS ⤴
+Go to Credential Manager from Control Panel => Windows Credentials => find git:https://github.com => Edit => On Password replace with with your Github Personal Access Token => You are Done
+
+If you dont find git:https://github.com => Click on Add a generic credential => Internet address will be git:https://github.com and you need to type in your username and password will be your Github Personal Access Token => Click Ok and You are Done
