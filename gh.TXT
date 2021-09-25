@@ -1,18 +1,21 @@
 Commands for using github cli
-
+more details: https://cli.github.com/manual/
 
 view issuse
 	gh issue status -> more detailed
 	gh issue list
-new issues
+///////////new issues
 -> gh issue create --title "My new issue" --body "Here are more details."
 -> gh issue create --title "My new issue" --body "Here are more details." --assignee @me,monalisa --label "bug,help wanted" --project onboarding --milestone "learning codebase"
-
-
-new pull request
-	
+///////////Deleting an issue
+		-> gh issue delete {<number> | <url>} [flags]
+///////////closing an issue
+		->	gh issue close {<number> | <url>} [flags]
+///////////Editing an issue
+	-> gh issue edit {<number> | <url>} [flags]
 
 review pull request
 close an issue
+
 view an issue
 repo info
