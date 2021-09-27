@@ -332,3 +332,17 @@ For Windows OS ⤴
 Go to Credential Manager from Control Panel => Windows Credentials => find git:https://github.com => Edit => On Password replace with with your Github Personal Access Token => You are Done
 
 If you dont find git:https://github.com => Click on Add a generic credential => Internet address will be git:https://github.com and you need to type in your username and password will be your Github Personal Access Token => Click Ok and You are Done
+
+
+
+///////////////////////////////////////////////
+
+The default branch has been renamed!
+master is now named main
+
+If you have a local clone, you can update it by running:
+
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
