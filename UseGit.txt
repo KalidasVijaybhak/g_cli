@@ -19,4 +19,5 @@ Use full basic command
 #6 create a new branch
  git branch branchname
 
-#7 
+#7 list remote + all branches 
+	git branch -a
