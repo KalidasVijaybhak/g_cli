@@ -13,9 +13,11 @@ view issuse
 		->	gh issue close {<number> | <url>} [flags]
 ///////////Editing an issue
 	-> gh issue edit {<number> | <url>} [flags]
-
+/////////// List Closed Issues 
+	-> gh issue list --state closed   // if closed by me
+	-> gh issue list --state closed --assignee user  // closed by someone else
 review pull request
-close an issue
+ 
 
 view an issue
 repo info
