@@ -1,6 +1,7 @@
 Commands for using github cli
 more details: https://cli.github.com/manual/
-
+ISSUES SECTION
+--------------
 view issuse
 	gh issue status -> more detailed
 	gh issue list
@@ -16,6 +17,11 @@ view issuse
 /////////// List Closed Issues 
 	-> gh issue list --state closed   // if closed by me
 	-> gh issue list --state closed --assignee user  // closed by someone else
+
+
+
+
+	
 review pull request
  
 
